@@ -181,13 +181,19 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+  }
+
+  .inspiracion-container .imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .inspiracion-container .imagen img {
     max-width: 80%;
     height: auto;
-    margin-top: 20px;
   }
 
   .inspiracion-container .texto {
