@@ -771,28 +771,31 @@ html {
     background: transparent; 
   }
 
-  .nav-links li a {
-    display: block;
-    width: 200px;
-    text-align: center;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    padding: 12px 20px;
-    background: rgba(0, 0, 0, 0.2); 
-    border: 1px solid rgba(207, 161, 92, 0.6);
-    color: #fff;
-    border-radius: 30px;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease-in-out;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-  }
+  .nav-links li {
+  list-style: none;
+}
 
-  .nav-links li a:hover {
-    background: rgba(207, 161, 92, 0.9);
-    color: #0c0f1a;
-    box-shadow: 0 0 8px rgba(207, 161, 92, 0.4);
-    transform: scale(1.03);
-  }
+.nav-links li a {
+  display: block;
+  min-width: 120px;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(207, 161, 92, 0.6);
+  color: #fff;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+  
+.nav-links li a:hover {
+  background: rgba(207, 161, 92, 0.9);
+  color: #0c0f1a;
+  box-shadow: 0 0 8px rgba(207, 161, 92, 0.4);
+  transform: scale(1.03);
 }
 
 .nav-links {
@@ -802,6 +805,7 @@ html {
   gap: 20px;
   background: transparent;
   padding-top: 30px;
+  flex-wrap: wrap;
 }
 
 .nav-links .fila {
@@ -811,9 +815,12 @@ html {
   flex-wrap: wrap;
 }
 
-.nav-links .fila-superior li,
-.nav-links .fila-inferior li {
-  list-style: none;
+.nav-links .fila-superior,
+.nav-links .fila-inferior {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
