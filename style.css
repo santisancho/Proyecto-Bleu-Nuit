@@ -177,7 +177,7 @@ html {
 }
 
 @media (max-width: 768px) {
-  .imgagen img {
+  .imgagen {
     display: block;
     margin: 0 auto;
     max-width: 90%;
