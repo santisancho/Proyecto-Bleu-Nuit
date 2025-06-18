@@ -176,6 +176,14 @@ html {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .imgagen img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
 .imagen img {
   max-width: 320px;
   border-radius: 30px;
