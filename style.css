@@ -820,31 +820,3 @@ html {
   transform: scale(1.03);
 }
 
-.menu-mobile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  padding: 10px 20px;
-  background: transparent;
-}
-
-.menu-mobile a {
-  flex: 1 1 calc(33.33% - 20px); /* 3 botones arriba */
-  max-width: 110px;
-  padding: 10px 14px;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #fff;
-  border: 1px solid #cfa15c;
-  border-radius: 40px;
-  background: rgba(15, 15, 35, 0.6);
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
-}
-
-.menu-mobile a:hover {
-  background: rgba(255, 215, 100, 0.2);
-  color: #cfa15c;
-  border-color: #cfa15c;
-}
