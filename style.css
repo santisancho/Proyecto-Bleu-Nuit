@@ -188,11 +188,12 @@ html {
   .inspiracion-container .imagen {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 10%;
   }
 
   .inspiracion-container .imagen img {
-    max-width: 80%;
+    max-width: 70%;
     height: auto;
   }
 
