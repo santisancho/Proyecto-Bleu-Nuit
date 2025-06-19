@@ -771,11 +771,6 @@ html {
   background: transparent;
 }
 
-  .nav-desktop {
-  display: flex;
-  justify-content: center;
-}
-
  .nav-links {
   display: flex;
   flex-direction: column;
@@ -884,7 +879,6 @@ html {
     align-items: flex-start;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
-    display: none;
   }
 
   .menu-movil.open {
@@ -922,75 +916,3 @@ html {
   }
 }
 
-  /* === RESPONSIVE === */
-@media (max-width: 768px) {
-  /* Ocultar menú de escritorio */
-  .nav-desktop {
-    display: none;
-  }
-
-  /* Mostrar botón hamburguesa */
-  .menu-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-
-  .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #cfa15c;
-    border-radius: 2px;
-    transition: 0.3s;
-  }
-
-  /* Mostrar menú móvil cuando tiene clase .open */
-  .menu-movil {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  .menu-movil.open {
-    right: 0;
-  }
-
-  .menu-movil ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-  }
-
-  .menu-movil li {
-    margin: 20px 0;
-  }
-
-  .menu-movil a {
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    border-bottom: 1px solid #cfa15c;
-    padding-bottom: 5px;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .menu-movil a:hover {
-    color: #cfa15c;
-  }
-}
