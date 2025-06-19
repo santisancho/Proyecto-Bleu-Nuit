@@ -846,65 +846,74 @@ html {
   transform: scale(1.03);
 }
 
-  /* Oculta menú escritorio en mobile */
-.menu-escritorio {
-  display: block;
-}
-
-.menu-movil,
-.menu-toggle {
-  display: none;
-}
-
-/* Mostrar menú hamburguesa en pantallas pequeñas */
+ /* Solo para móviles */
 @media (max-width: 768px) {
-  .menu-escritorio {
-    display: none;
-  }
-
-  .menu-movil {
-    display: block;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border-radius: 10px;
-    padding: 15px;
-    z-index: 1000;
-  }
-
-  .menu-movil ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu-movil li {
-    margin: 10px 0;
-  }
-
-  .menu-movil a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-  }
-
   .menu-toggle {
-    display: block;
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: 30px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
-    z-index: 1100;
   }
 
   .menu-toggle span {
     display: block;
-    width: 30px;
-    height: 4px;
+    width: 25px;
+    height: 3px;
     background-color: #cfa15c;
-    margin: 6px 0;
     border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .menu-movil {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .menu-movil.open {
+    right: 0;
+  }
+
+  .menu-movil ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .menu-movil li {
+    margin: 20px 0;
+  }
+
+  .menu-movil a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-bottom: 1px solid #cfa15c;
+    padding-bottom: 5px;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .menu-movil a:hover {
+    color: #cfa15c;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
 }
