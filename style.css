@@ -752,7 +752,7 @@ html {
   background: linear-gradient(to right, transparent, #cfa15c, transparent);
 }
 
-/*MEDIA QUERY PARA BOTONES DEL .HERO*/
+
 
 @media (max-width: 768px) {
   .nav-transparente {
@@ -763,15 +763,35 @@ html {
     background: transparent; 
   }
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    padding: 25px 0;
-    background: transparent; 
-  }
+  .nav-transparente {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+}
 
-  .nav-links li {
+  .nav-desktop {
+  display: flex;
+  justify-content: center;
+}
+
+ .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+  .nav-links .fila {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
   list-style: none;
 }
 
@@ -823,28 +843,11 @@ html {
   flex-wrap: wrap;
 }
 
-.nav-links li a {
-  display: block;
-  min-width: 120px;
-  text-align: center;
-  font-size: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  padding: 12px 18px;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(207, 161, 92, 0.6);
-  color: #fff;
-  border-radius: 30px;
-  backdrop-filter: blur(4px);
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease-in-out;
+/* Botón hamburguesa solo visible en mobile */
+.menu-toggle {
+  display: none;
 }
 
-.nav-links li a:hover {
-  background: rgba(207, 161, 92, 0.9);
-  color: #0c0f1a;
-  box-shadow: 0 0 8px rgba(207, 161, 92, 0.4);
-  transform: scale(1.03);
-}
 
  /* Solo para móviles */
 @media (max-width: 768px) {
@@ -868,6 +871,86 @@ html {
     transition: 0.3s;
   }
 
+  .menu-movil {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: none;
+  }
+
+  .menu-movil.open {
+    right: 0;
+  }
+
+  .menu-movil ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .menu-movil li {
+    margin: 20px 0;
+  }
+
+  .menu-movil a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-bottom: 1px solid #cfa15c;
+    padding-bottom: 5px;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .menu-movil a:hover {
+    color: #cfa15c;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+  /* === RESPONSIVE === */
+@media (max-width: 768px) {
+  /* Ocultar menú de escritorio */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #cfa15c;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Mostrar menú móvil cuando tiene clase .open */
   .menu-movil {
     position: fixed;
     top: 0;
@@ -909,11 +992,5 @@ html {
 
   .menu-movil a:hover {
     color: #cfa15c;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
   }
 }
